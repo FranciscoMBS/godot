@@ -1055,7 +1055,7 @@ void ParticleProcessMaterial::_update_shader() {
 
 	code += "	TRANSFORM[3].xyz += final_velocity * DELTA;\n\n";
 	
-	code += "	process_display_param(params, lifetime_percent);\n\n";
+	code += "   process_display_param(params, lifetime_percent);\n\n";
 	
 	code += "    float base_angle = CUSTOM.x / degree_to_rad;\n";
 	if (tex_parameters[PARAM_ANGLE].is_valid()) {
