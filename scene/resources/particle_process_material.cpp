@@ -1054,9 +1054,9 @@ void ParticleProcessMaterial::_update_shader() {
 	}
 
 	code += "	TRANSFORM[3].xyz += final_velocity * DELTA;\n\n";
-	
+
 	code += "   process_display_param(params, lifetime_percent);\n\n";
-	
+
 	code += "    float base_angle = CUSTOM.x / degree_to_rad;\n";
 	if (tex_parameters[PARAM_ANGLE].is_valid()) {
 		code += "	base_angle *= texture(angle_texture, vec2(lifetime_percent)).r;\n";
@@ -1068,7 +1068,7 @@ void ParticleProcessMaterial::_update_shader() {
 		code += "    base_angle += dynamic_params.angular_velocity * DELTA / 1.5;\n";
 	}
 	code += "   CUSTOM.x = base_angle * degree_to_rad;\n";
-	
+
 	code += "	COLOR = params.color;\n\n";
 
 	if (particle_flags[PARTICLE_FLAG_DISABLE_Z]) {
