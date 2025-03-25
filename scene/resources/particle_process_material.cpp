@@ -1059,7 +1059,7 @@ void ParticleProcessMaterial::_update_shader() {
 	
 	code += "    float base_angle = CUSTOM.x / degree_to_rad;\n";
 	if (tex_parameters[PARAM_ANGLE].is_valid()) {
-	code += "	base_angle *= texture(angle_texture, vec2(lifetime_percent)).r;\n";
+		code += "	base_angle *= texture(angle_texture, vec2(lifetime_percent)).r;\n";
 	}
 	if (tex_parameters[PARAM_ANGULAR_VELOCITY].is_valid()) {
 		code += "    float angular_velocity = dynamic_params.angular_velocity * texture(angular_velocity_texture, vec2(lifetime_percent)).r;\n";
